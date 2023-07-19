@@ -1,0 +1,45 @@
+{
+  "name": "ComponentKit",
+  "version": "0.31.1",
+  "license": "BSD",
+  "summary": "A React-inspired view framework for iOS",
+  "homepage": "https://componentkit.org",
+  "social_media_url": "https://twitter.com/componentkit",
+  "authors": "adamjernst@fb.com",
+  "source": {
+    "git": "https://github.com/GRiA/componentkit.git",
+    "tag": "0.31.1.1"
+  },
+  "platforms": {
+    "ios": "14.0"
+  },
+  "requires_arc": true,
+  "source_files": [
+    "ComponentKit/**/*",
+    "ComponentTextKit/**/*"
+  ],
+  "exclude_files": [
+    "RenderCore/*",
+    "ComponentKit/Info.plist",
+    "ComponentKit/ComponentKit/RenderCoreHeaders/*",
+    "ComponentKit/*.xcconfig",
+    "ComponentTextKit/Info.plist",
+    "ComponentTextKit/*.xcconfig"
+  ],
+  "frameworks": [
+    "UIKit",
+    "CoreText"
+  ],
+  "libraries": "c++",
+  "xcconfig": {
+    "CLANG_CXX_LANGUAGE_STANDARD": "gnu++17",
+    "CLANG_CXX_LIBRARY": "libc++"
+  },
+  "dependencies": {
+    "RenderCore": [
+        "0.31"
+    ],
+    "Yoga14": [
+    ]
+  }
+}
