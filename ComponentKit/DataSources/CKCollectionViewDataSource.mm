@@ -125,10 +125,10 @@ static void applyChangesToCollectionView(UICollectionView *collectionView,
     }
 
     void (^applyUpdatedState)(CKDataSourceState *) = ^(CKDataSourceState *updatedState) {
-      [_collectionView performBatchUpdates:^{
-        _currentState = updatedState;
+        [self->_collectionView performBatchUpdates:^{
+            self->_currentState = updatedState;
       } completion:^(BOOL finished) {
-        [_announcer dataSourceDidEndUpdates:self didModifyPreviousState:previousState withState:state byApplyingChanges:changes];
+          [self->_announcer dataSourceDidEndUpdates:self didModifyPreviousState:previousState withState:state byApplyingChanges:changes];
       }];
     };
 
@@ -150,9 +150,9 @@ static void applyChangesToCollectionView(UICollectionView *collectionView,
     CKComponentBoundsAnimationApply(boundsAnimation, ^{
       for (NSIndexPath *indexPath in changes.updatedIndexPaths) {
         CKDataSourceItem *item = [state objectAtIndexPath:indexPath];
-        CKCollectionViewDataSourceCell *cell = (CKCollectionViewDataSourceCell *)[_collectionView cellForItemAtIndexPath:indexPath];
+          CKCollectionViewDataSourceCell *cell = (CKCollectionViewDataSourceCell *)[self->_collectionView cellForItemAtIndexPath:indexPath];
         if (cell) {
-          attachToCell(cell, item, _attachController, _cellToItemMap, YES);
+            attachToCell(cell, item, self->_attachController, self->_cellToItemMap, YES);
         }
       }
     }, nil);
@@ -167,7 +167,7 @@ static void applyChangesToCollectionView(UICollectionView *collectionView,
       // Update current state
       _currentState = state;
     } completion:^(BOOL finished){
-      [_announcer dataSourceDidEndUpdates:self didModifyPreviousState:previousState withState:state byApplyingChanges:changes];
+        [self->_announcer dataSourceDidEndUpdates:self didModifyPreviousState:previousState withState:state byApplyingChanges:changes];
     }];
   }
 }
@@ -200,7 +200,7 @@ static auto heightChange(CKDataSourceState *previousState, CKDataSourceState *st
   [removedSections enumerateIndexesUsingBlock:^(NSUInteger section, BOOL *stop) {
     [state enumerateObjectsInSectionAtIndex:section
                                  usingBlock:^(CKDataSourceItem *item, NSIndexPath *indexPath, BOOL *stop2) {
-      [_attachController detachComponentLayoutWithScopeIdentifier:[[item scopeRoot] globalIdentifier]];
+        [self->_attachController detachComponentLayoutWithScopeIdentifier:[[item scopeRoot] globalIdentifier]];
     }];
   }];
 }
