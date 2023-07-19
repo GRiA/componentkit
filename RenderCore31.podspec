@@ -8,7 +8,6 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/GRiA/ComponentKit.git', :tag => s.version.to_s }
   s.ios.deployment_target = '14.0'
   s.requires_arc = true
-
   s.source_files = 'RenderCore/**/*.{h,m,mm}'
   s.frameworks = 'UIKit'
   s.library = 'c++'
@@ -16,4 +15,5 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
   }
+  s.module_name = 'RenderCore'
 end
