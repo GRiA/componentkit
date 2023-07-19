@@ -18,6 +18,6 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
     'CLANG_CXX_LIBRARY' => 'libc++',
   }
-  s.dependency 'RenderCore', s.version.to_s
-  s.dependency 'Yoga', '~> 1.14'
+  s.dependency 'RenderCore31'
+  s.dependency 'Yoga14'
 end
