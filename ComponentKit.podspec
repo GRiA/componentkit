@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
   s.frameworks = 'UIKit', 'CoreText'
   s.library = 'c++'
   s.xcconfig = {
-    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++14',
+    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
   }
   s.dependency 'RenderCore31'
