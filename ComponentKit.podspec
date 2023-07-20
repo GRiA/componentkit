@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ComponentKit'
-  s.version = '0.31.3.1'
+  s.version = '0.31.3.2'
   s.license = 'BSD'
   s.summary = 'A React-inspired view framework for iOS'
   s.homepage = 'https://componentkit.org'
@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ComponentKit/**/*', 'ComponentTextKit/**/*'
   s.exclude_files = ['ComponentKit/Info.plist', 'ComponentKit/ComponentKit.xcconfig']
+  s.public_header_files = 'ComponentKit/**/*.h'
   s.frameworks = 'UIKit', 'CoreText'
   s.library = 'c++'
   s.xcconfig = {

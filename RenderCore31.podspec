@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'RenderCore31'
-  s.version = '0.31.3.1'
+  s.version = '0.31.3.2'
   s.license = 'BSD'
   s.summary = 'Base library for ComponentKit'
   s.homepage = 'https://componentkit.org'
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
+    'DEFINES_MODULE' => 'YES'
   }
   s.module_name = 'RenderCore'
 end
