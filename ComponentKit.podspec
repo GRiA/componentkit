@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/GRiA/ComponentKit.git', :tag => s.version.to_s }
   s.ios.deployment_target = '14.0'
   s.requires_arc = true
-
+  s.static_framework = false
   s.source_files = 'ComponentKit/**/*', 'ComponentTextKit/**/*'
   s.exclude_files = ['ComponentKit/Info.plist', 'ComponentKit/ComponentKit.xcconfig']
   s.frameworks = 'UIKit', 'CoreText'
@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
   s.xcconfig = {
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
+    'DEFINES_MODULE' => 'YES'
   }
   s.dependency 'RenderCore31'
   s.dependency 'Yoga14'

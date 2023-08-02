@@ -15,5 +15,9 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
     'CLANG_CXX_LIBRARY' => 'libc++',
   }
+  s.pod_target_xcconfig {
+    'DEFINES_MODULE' => 'YES'
+  }
   s.module_name = 'RenderCore'
+  s.static_framework = false
 end
