@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ComponentKit'
-  s.version = '0.31.3.1'
+  s.version = '0.31.3.4'
   s.license = 'BSD'
   s.summary = 'A React-inspired view framework for iOS'
   s.homepage = 'https://componentkit.org'
@@ -14,10 +14,13 @@ Pod::Spec.new do |s|
   s.exclude_files = ['ComponentKit/Info.plist', 'ComponentKit/ComponentKit.xcconfig']
   s.frameworks = 'UIKit', 'CoreText'
   s.library = 'c++'
-  s.xcconfig = {
-    'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
-    'CLANG_CXX_LIBRARY' => 'libc++',
+  s.pod_target_xcconfig = {
+    'DEFINES_MODULE' => 'YES'
   }
-  s.dependency 'RenderCore31'
-  s.dependency 'Yoga14'
+  #s.xcconfig = {
+    #'CLANG_CXX_LANGUAGE_STANDARD' => 'gnu++17',
+ #   'CLANG_CXX_LIBRARY' => 'libc++',
+ # }
+  s.dependency 'RenderCore31', s.version.to_s
+  s.dependency 'Yoga14', '~> 1.14.4.1'
 end
