@@ -22,5 +22,5 @@ Pod::Spec.new do |s|
  #   'CLANG_CXX_LIBRARY' => 'libc++',
  # }
   s.dependency 'RenderCore31', s.version.to_s
-  s.dependency 'Yoga14', '~> 1.14.4.1'
+  s.dependency 'Yoga14', '~> 1.14.5.1'
 end
